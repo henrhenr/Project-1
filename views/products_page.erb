@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<title>Look around! These are our products</title>
+		<link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css">
+	</head>
+
+	<body>
+		<!--Start of Nav bar-->
+		<div class="navbar navbar-fixed-top navbar-inverse" role="navigation">
+	      <div class="container">
+	        <div class="navbar-header">
+	          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+	            <span class="sr-only">Toggle navigation</span>
+	            <span class="icon-bar"></span>
+	            <span class="icon-bar"></span>
+	            <span class="icon-bar"></span>
+	          </button>
+	          <a class="navbar-brand" href="/">Aling Nena</a><!-- this is where you set the navigation title -->
+	        </div>
+	        <div class="collapse navbar-collapse"><!-- collapse allows for this navbar to be used in mobile devices -->
+	          <ul class="nav navbar-nav"><!-- this is the list of navigation options in your navbar -->
+	            <li><a href="/about">About</a></li>
+	            <li class="active"><a href="/products">Products</a></li>
+	          </ul>
+	        </div><!--/.nav-collapse -->
+	      </div>
+	    </div>
+	    <!--End of Nav bar-->
+	    <br/><br/><br/>
+
+	    <div class="container">
+
+      	<div class="admin">
+        	<h1><center>All Products</center></h1>
+        	<table class="table table-striped">
+          	<thead>
+            	<tr>
+              		<td>ID</td>
+	            	<td>Name</td>
+	            	<td>Quantity Available For Sale</td>
+	              	<td>Price</td>
+	              	<td>Sold Products</td>
+	              	<td>Order</td>
+	        	</tr>
+	        </thead>
+	        <tbody>
+	          	<% @products.each do |product| %>
+	            <tr>
+	              <td><%= product.id %></td>
+	              <td><%= product.name %></td>
+	              <td><%= product.quantity %></td>
+	              <td><%= product.price %></td>
+	              <td><%= product.sold %></td>
+	              <td><a href ="/order/<%= product.id %>" button type="submit" class="btn btn-default btn-primary">Buy!!!</a></button></td>
+	            </tr>
+				<% end %>          
+			</tbody>          
+	        </table>
+	      </div>
+	    </div><!-- /.container -->
+	</body>
+</html>

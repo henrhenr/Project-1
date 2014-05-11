@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+	<meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>ALING NENA'S SARI-SARI STORE</title>
+
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
+
+    <link href="/css/admin.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+
+
+
+    <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="/">Aling Nena</a>
+          <a class="navbar-brand" href="/about">About</a>
+          <a class="navbar-brand" href="/products">Products</a>
+        </div>
+      </div>
+    </div>
+
+    <center><marquee direction="right"><img src="nenabanner.jpg"></marquee></center>
+    <center>
+
+
+    <div class="admin">
+        <h1>Here are some of our products!</h1>
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <td>Name</td>
+              <td>Price</td>
+              <td>Stocks Left</td>
+            </tr>
+          </thead>
+          <tbody>
+          <% @products.first(5).each do |product| %>
+            <tr>
+              <td><%= product.name %></td>
+              <td><%= product.price %></td>
+              <td><%= product.quantity %></td>
+            </tr>
+      <% end %>            
+      </tbody>          
+        </table>
+        <a href="/products" class="btn btn-success">See All Products</a>
+      </div>
+    
+  </body>
+  
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<title>YAY! Your transaction was successful!!!</title>
+		<link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css">
+	</head>
+
+	<body>
+
+		<!--Start of Nav bar-->
+		<div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+            <div class="container">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="/">Aling Nena</a>
+                </div>
+            </div>
+        </div>
+	    <!--End of Nav bar-->
+
+	    <br/><br/><br/>
+
+		<center>
+		<h1>Product Name : <%= @product.name %></h1>
+	    <h1>Purchased : <%= @quant %> piece(s)</h1>
+	    <h1>Total Bill: P<%= @compute.total %></h1>
+	    <br/>
+
+	    <h2>You have an excess amount of: <%= @compute.money_change %></h2>
+	    </center>
+
+	    <p><marquee direction"left">Thank you for buying your needs at Aling Nena's Sari-sari Store. Come back Again!!! / <i>"Maraming Salamat! Mabuhay kayo!" - Aling Nena</i></marquee></p>
+	    <br/>
+
+	    <center><a href ="/products" button type="submit" class="btn btn-success">Click here to continue shopping!;</a></button></div></center>
+	</body>
+</html>

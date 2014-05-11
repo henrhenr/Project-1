@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+
+<html>
+
+	<head>
+		<title>Transaction Page</title>
+		<link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css">
+		<link rel="stylesheet" type="text/css" href="MyStyle.css">
+	</head>
+	<body>
+		<!--Start of Nav bar-->
+		<div class="navbar navbar-fixed-top navbar-inverse" role="navigation">
+	      <div class="container">
+	        <div class="navbar-header">
+				<a class="navbar-brand" href="/">Aling Nena</a><!-- this is where you set the navigation title -->
+	        </div><!--/.nav-collapse -->
+	      </div>
+	    </div>
+	    <!--End of Nav bar-->
+	    <br/><br/><br/>
+	    <center>
+	    <h1>Name of Product : <%= @name %></h1>
+	    <h1>Purchased : <%= @ordered_amount %> piece(s)</h1>
+	    <h1>Total Amount To Pay : P<%= @total_amount %></h1>
+	    </center>
+	    <!-- This is for amount of money-->
+	    <center>
+			<form role="form" class="form-line" method="POST" action="/transaction/<%= params[:id] %>/<%= params[:quantity] %>"><br>
+  			<h3><center>Denominations of Payment</center></h3>
+  			<br/>
+	  				<div class="col-md-2 col-md-offset-5">
+			      	<label>Thousands</label>
+		            <input type="text" class="form-control" name="thousands" placeholder="Thousand Bills" value="0">
+		            <br/>
+		            <label>Five Hundreds</label>
+		            <input type="text" class="form-control" name="five_hundreds" placeholder="Five Hundred Bills" value="0">
+		            <br/>
+		            <label>Hundreds</label>
+		            <input type="text" class="form-control" name="hundreds" placeholder="Hundred Bills" value="0">
+		            <br/>
+		            <label>Fifties</label>
+		            <input type="text" class="form-control" name="fifties" placeholder="Fifty Bills" value="0">
+		        	</br>	
+		        	<label>Twenties</label>
+		            <input type="text" class="form-control" name="twenties" placeholder="Twenty Bills" value="0">
+		            <br/>
+		            <label>Tens</label>
+		            <input type="text" class="form-control" name="tens" placeholder="Ten Peso Coins" value="0">
+		            <br/>
+		            <label>Fives</label>
+		            <input type="text" class="form-control" name="fives" placeholder="Five Peso Coins" value="0">
+					<br/>
+					<label>Ones</label>
+					<input type="text" class="form-control" name="ones" placeholder="One Peso Coins" value="0">
+					<br/>
+					<button type="submit" class="btn btn-default btn-primary">Pay</button><br><br>
+					<a href ="/products" button type="submit" class="btn btn-danger">Go Back To Products Page</a></button>
+					<br><br>
+				</div>
+    	</center>
+	</body>	
+</html>
